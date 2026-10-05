@@ -1,0 +1,386 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Text & Speech Analysis System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <span>Smart<span class="highlight">Analyze</span></span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#analyzer">Analyzer</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#analyzer" class="nav-button">Try Analyzer</a>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ AI-Powered Text & Speech Intelligence
+            </div>
+
+            <h1>
+                Understand Your
+                <span>Words & Voice</span>
+                Smarter
+            </h1>
+
+            <p>
+                Analyze text and speech instantly to discover sentiment,
+                keywords, emotions, and meaningful insights using intelligent
+                language analysis.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#analyzer" class="primary-button">
+                    Start Analyzing →
+                </a>
+
+                <a href="#features" class="secondary-button">
+                    Explore Features
+                </a>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <strong>2+</strong>
+                    <span>Analysis Modes</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Browser Based</span>
+                </div>
+
+                <div>
+                    <strong>⚡</strong>
+                    <span>Real Time</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                <span>😊</span>
+                <div>
+                    <small>Sentiment</small>
+                    <strong>Positive</strong>
+                </div>
+            </div>
+
+            <div class="analysis-circle">
+                <div class="mic-symbol">🎙️</div>
+                <span>Analyze</span>
+            </div>
+
+            <div class="floating-card card-two">
+                <span>🔑</span>
+                <div>
+                    <small>Keywords</small>
+                    <strong>Detected</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Analyzer Section -->
+    <section class="analyzer-section" id="analyzer">
+
+        <div class="section-heading">
+            <span>SMART ANALYZER</span>
+            <h2>Analyze Your Content</h2>
+            <p>
+                Enter your text or use your microphone and let the system
+                generate useful insights.
+            </p>
+        </div>
+
+
+        <div class="analyzer-container">
+
+            <!-- Input Card -->
+            <div class="input-card">
+
+                <div class="input-header">
+                    <div>
+                        <h3>Content Input</h3>
+                        <p>Type something or speak using your microphone.</p>
+                    </div>
+
+                    <div class="status">
+                        <span></span> Ready
+                    </div>
+                </div>
+
+
+                <textarea
+                    id="textInput"
+                    placeholder="Type or paste your text here..."
+                ></textarea>
+
+
+                <div class="input-actions">
+
+                    <button class="mic-button" id="micButton">
+                        🎙️ Start Speaking
+                    </button>
+
+                    <button class="clear-button" id="clearButton">
+                        Clear
+                    </button>
+
+                    <button class="analyze-button" id="analyzeButton">
+                        Analyze Text →
+                    </button>
+
+                </div>
+
+                <div class="voice-status" id="voiceStatus">
+                    Microphone is ready
+                </div>
+
+            </div>
+
+
+            <!-- Results -->
+            <div class="results-card">
+
+                <div class="results-header">
+                    <div>
+                        <h3>Analysis Results</h3>
+                        <p>Your content insights will appear here.</p>
+                    </div>
+
+                    <div class="result-icon">✦</div>
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="result-box">
+                        <div class="result-top">
+                            <span>😊</span>
+                            <small>Sentiment</small>
+                        </div>
+
+                        <h4 id="sentiment">--</h4>
+                        <p id="sentimentScore">Waiting for analysis</p>
+                    </div>
+
+
+                    <div class="result-box">
+                        <div class="result-top">
+                            <span>🔤</span>
+                            <small>Words</small>
+                        </div>
+
+                        <h4 id="wordCount">0</h4>
+                        <p>Total words</p>
+                    </div>
+
+
+                    <div class="result-box">
+                        <div class="result-top">
+                            <span>🔠</span>
+                            <small>Characters</small>
+                        </div>
+
+                        <h4 id="charCount">0</h4>
+                        <p>Total characters</p>
+                    </div>
+
+
+                    <div class="result-box">
+                        <div class="result-top">
+                            <span>🔑</span>
+                            <small>Keywords</small>
+                        </div>
+
+                        <h4 id="keywordCount">0</h4>
+                        <p>Important words</p>
+                    </div>
+
+                </div>
+
+
+                <div class="keywords-section">
+                    <h4>Detected Keywords</h4>
+
+                    <div id="keywords" class="keyword-list">
+                        <span class="empty-keyword">
+                            Keywords will appear here
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+
+        <div class="section-heading">
+            <span>POWERFUL FEATURES</span>
+            <h2>Everything You Need to Analyze</h2>
+            <p>
+                A simple interface with useful text and speech analysis tools.
+            </p>
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Text Analysis</h3>
+                <p>
+                    Enter any text and instantly analyze its basic language
+                    characteristics.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <h3>Speech Recognition</h3>
+                <p>
+                    Convert your voice into text directly through your browser
+                    microphone.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">😊</div>
+                <h3>Sentiment Analysis</h3>
+                <p>
+                    Identify whether the entered content expresses positive,
+                    negative, or neutral sentiment.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">🔑</div>
+                <h3>Keyword Detection</h3>
+                <p>
+                    Automatically identify frequently occurring meaningful
+                    words from your content.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Content Statistics</h3>
+                <p>
+                    View word count, character count, and other useful content
+                    statistics.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-Time Results</h3>
+                <p>
+                    Get analysis results immediately without installing
+                    additional software.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <div class="about-icon">
+                ✦
+            </div>
+
+            <div>
+                <span>ABOUT THE PROJECT</span>
+
+                <h2>
+                    Making Human Communication
+                    <strong>Understandable</strong>
+                </h2>
+
+                <p>
+                    Smart Text and Speech Analysis System is an intelligent
+                    web-based application designed to process text and voice
+                    input. The system converts speech into text and analyzes
+                    the content to provide useful insights such as sentiment,
+                    keywords, word count, and character statistics.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ Smart<span>Analyze</span>
+        </div>
+
+        <p>
+            Smart Text & Speech Analysis System
+        </p>
+
+        <div class="footer-line"></div>
+
+        <small>
+            © 2026 SmartAnalyze. Built with HTML, CSS & JavaScript.
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
